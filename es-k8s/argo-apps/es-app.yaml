@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: elasticsearch
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://gitlab.com/yvilchynskyi1/o11y-demo.git
+    targetRevision: main
+    path: es-k8s/es
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: elastic
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
