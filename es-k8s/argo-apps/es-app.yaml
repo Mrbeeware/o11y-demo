@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/yvilchynskyi1/o11y-demo.git
+    repoURL: https://github.com/Mrbeeware/o11y-demo.git
     targetRevision: main
     path: es-k8s/es
 
